@@ -36,6 +36,15 @@ pipeline {
                 """
             }
         }
+
+        stage('plan') {
+            steps {
+                sh """
+                    cd terraform
+                    terraform plan -var-file=${params.environment}/${params.environment}.tfvars -var="app_version=${params.version}"
+                """
+            }
+        }
         
     }
     // Post build means build ipoena tharuwatha em cheyali
