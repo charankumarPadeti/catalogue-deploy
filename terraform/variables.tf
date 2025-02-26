@@ -30,3 +30,7 @@ variable "tags" {
 variable app_version {
   
 }
+
+variable "iam_instance_profile" {
+  default = "ShellScriptRoleForRoboshop"
+}
